@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h1= theAlbum.name
+
+
+
+  table
+      thead
+        tr
+          th ID
+          th Name
+      tbody
+          tr
+            td= theAlbum.id
+            td
+              a(href='/albums/' + theAlbum.id)= theAlbum.name
+
+  a(href="/albums/" + theAlbum.id + '/edit') Edit
+
+  form(action="/albums/" + theAlbum.id + "/delete" method="POST")
+    input(type="submit" value="Delete")

@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  h1 New albums
+
+  form(action="/albums", method="post")
+
+    div
+      label(for="artist_name") Artist Name
+      input(type="text" name="artist_name")
+
+    div
+      label(for="album_name") Album Name
+      input(type="text" name="album_name")
+
+    div
+      label(for="album_genre") Genre
+      select(name="genre")
+        option(value="theAlbum.genre")
+
+    div
+      label(for="stars") Album Rating 1
+        input(type="radio" name="album_rating" value="1")
+        input(type="radio" name="album_rating" value="2")
+        input(type="radio" name="album_rating" value="3")
+        input(type="radio" name="album_rating" value="4")
+        input(type="radio" name="album_rating" value="5")
+        span 5
+
+    div
+      label(for="explicit")
+        input(type="checkbox" name="explicit" for="explicit")
+        span Contains Explicit Lyrics
+
+    div
+      input(type="submit" value="Create Album")
+      a(href="/albums") cancel

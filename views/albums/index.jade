@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  h1 albums
+
+  a(href="/albums/new") New Album
+
+  table
+    thead
+      tr
+        th ID
+        th name
+    tbody
+      for album in allAlbums
+        tr
+          td= album.id
+          td= album.name
+          td
+            a(href='/albums/' + album.id)= album.name
